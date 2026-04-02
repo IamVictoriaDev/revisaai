@@ -133,9 +133,8 @@ http://localhost:5173
 
 ## 📌 Deploy
 
-* Frontend: *(em breve)*
-* Backend: *(em breve)*
-
+* Frontend: *(https://revisaai-tau.vercel.app)*
+* API (dados): *(https://revisaai-api.onrender.com )*
 ---
 
 ## 📄 PRD
