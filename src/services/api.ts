@@ -1,6 +1,6 @@
 import { Content, Doubt, Session } from '../types'
 
-const BASE = 'http://localhost:3001'
+const BASE = 'https://revisaai-api.onrender.com'
 
 // conteúdos
 export async function getContents(): Promise<Content[]> {
@@ -129,7 +129,7 @@ export async function deleteSession(id: number): Promise<void> {
 }
 
 // IA — chama o backend separado
-const AI_BASE = 'http://localhost:3002'
+const AI_BASE = 'https://revisaai.onrender.com'
 
 export async function gerarPerguntas(titulo: string): Promise<string[]> {
   const res = await fetch(`${AI_BASE}/ai/perguntas`, {
