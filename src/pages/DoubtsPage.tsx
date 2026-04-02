@@ -80,7 +80,7 @@ export function DoubtsPage() {
       setAiModal((prev) => ({
         ...prev,
         loading: false,
-        erro: 'A IA não respondeu agora. Verifica se o backend de IA tá rodando na porta 3002.',
+        erro: 'A IA não respondeu agora. Verifica se o backend da IA no Render está online.',
       }))
     }
   }

@@ -1,6 +1,7 @@
 import { Content, Doubt, Session } from '../types'
 
 const BASE = 'https://revisaai-api.onrender.com'
+const AI_BASE = 'https://revisaai.onrender.com'
 
 // conteúdos
 export async function getContents(): Promise<Content[]> {
@@ -25,7 +26,7 @@ export async function createContent(data: {
   return res.json()
 }
 
-export async function updateContent(id: number, data: {
+export async function updateContent(id: string, data: {
   status?: 'pendente' | 'revisado'
   notes?: string
   title?: string
@@ -40,7 +41,7 @@ export async function updateContent(id: number, data: {
   return res.json()
 }
 
-export async function deleteContent(id: number): Promise<void> {
+export async function deleteContent(id: string): Promise<void> {
   const res = await fetch(`${BASE}/contents/${id}`, { method: 'DELETE' })
   if (!res.ok) throw new Error('erro ao deletar conteúdo')
 }
@@ -67,7 +68,7 @@ export async function createDoubt(data: {
   return res.json()
 }
 
-export async function updateDoubt(id: number, data: {
+export async function updateDoubt(id: string, data: {
   resolved?: boolean
   question?: string
   subject?: string
@@ -81,7 +82,7 @@ export async function updateDoubt(id: number, data: {
   return res.json()
 }
 
-export async function deleteDoubt(id: number): Promise<void> {
+export async function deleteDoubt(id: string): Promise<void> {
   const res = await fetch(`${BASE}/doubts/${id}`, { method: 'DELETE' })
   if (!res.ok) throw new Error('erro ao deletar dúvida')
 }
@@ -108,7 +109,7 @@ export async function createSession(data: {
   return res.json()
 }
 
-export async function updateSession(id: number, data: {
+export async function updateSession(id: string, data: {
   subject?: string
   duration?: number
   date?: string
@@ -123,13 +124,12 @@ export async function updateSession(id: number, data: {
   return res.json()
 }
 
-export async function deleteSession(id: number): Promise<void> {
+export async function deleteSession(id: string): Promise<void> {
   const res = await fetch(`${BASE}/sessions/${id}`, { method: 'DELETE' })
   if (!res.ok) throw new Error('erro ao deletar sessão')
 }
 
-// IA — chama o backend separado
-const AI_BASE = 'https://revisaai.onrender.com'
+// IA
 
 export async function gerarPerguntas(titulo: string): Promise<string[]> {
   const res = await fetch(`${AI_BASE}/ai/perguntas`, {
