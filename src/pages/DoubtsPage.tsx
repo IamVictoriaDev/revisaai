@@ -53,7 +53,7 @@ export function DoubtsPage() {
     }
   }
 
-  async function handleResolve(id: number) {
+  async function handleResolve(id: string) {
     try {
       const atualizada = await updateDoubt(id, { resolved: true })
       setDoubts((prev) => prev.map((d) => (d.id === id ? atualizada : d)))
@@ -62,7 +62,7 @@ export function DoubtsPage() {
     }
   }
 
-  async function handleDelete(id: number) {
+  async function handleDelete(id: string) {
     try {
       await deleteDoubt(id)
       setDoubts((prev) => prev.filter((d) => d.id !== id))

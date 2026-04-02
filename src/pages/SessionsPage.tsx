@@ -14,7 +14,7 @@ export function SessionsPage() {
   const [formError, setFormError] = useState('')
   const [saving, setSaving] = useState(false)
 
-  const [editingId, setEditingId] = useState<number | null>(null)
+  const [editingId, setEditingId] = useState<string | null>(null)
   const [editDuration, setEditDuration] = useState('')
   const [editNotes, setEditNotes] = useState('')
 
@@ -59,7 +59,7 @@ export function SessionsPage() {
     }
   }
 
-  async function handleEdit(id: number) {
+  async function handleEdit(id: string) {
     const dur = Number(editDuration)
     if (isNaN(dur) || dur <= 0) {
       alert('Duração inválida.')
@@ -77,7 +77,7 @@ export function SessionsPage() {
     }
   }
 
-  async function handleDelete(id: number) {
+  async function handleDelete(id: string) {
     if (!confirm('Remover essa sessão?')) return
     try {
       await deleteSession(id)

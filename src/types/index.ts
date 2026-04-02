@@ -1,5 +1,5 @@
 export interface Content {
-  id: number
+  id: string
   title: string
   subject: string
   status: 'pendente' | 'revisado'
@@ -8,7 +8,7 @@ export interface Content {
 }
 
 export interface Doubt {
-  id: number
+  id: string
   question: string
   subject: string
   resolved: boolean
@@ -16,7 +16,7 @@ export interface Doubt {
 }
 
 export interface Session {
-  id: number
+  id: string
   subject: string
   duration: number
   date: string

@@ -2,8 +2,8 @@ import { Doubt } from '../types'
 
 interface Props {
   doubt: Doubt
-  onResolve: (id: number) => void
-  onDelete: (id: number) => void
+  onResolve: (id: string) => void
+  onDelete: (id: string) => void
   onExplain: (question: string) => void
 }
 

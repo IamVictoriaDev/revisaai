@@ -3,8 +3,8 @@ import { Content } from '../types'
 
 interface Props {
   content: Content
-  onToggleStatus: (id: number, status: 'pendente' | 'revisado') => void
-  onDelete: (id: number) => void
+  onToggleStatus: (id: string, status: 'pendente' | 'revisado') => void
+  onDelete: (id: string) => void
   onGenerateQuestions: (title: string) => void
 }
 

@@ -56,7 +56,7 @@ export function ContentsPage() {
     }
   }
 
-  async function handleToggleStatus(id: number, status: 'pendente' | 'revisado') {
+  async function handleToggleStatus(id: string, status: 'pendente' | 'revisado') {
     try {
       const atualizado = await updateContent(id, { status })
       setContents((prev) => prev.map((c) => (c.id === id ? atualizado : c)))
@@ -65,7 +65,7 @@ export function ContentsPage() {
     }
   }
 
-  async function handleDelete(id: number) {
+  async function handleDelete(id: string) {
     try {
       await deleteContent(id)
       setContents((prev) => prev.filter((c) => c.id !== id))
